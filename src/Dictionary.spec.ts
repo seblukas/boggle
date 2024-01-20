@@ -11,7 +11,7 @@ describe('Dictionary', () => {
 
     it('should set and get words', () => {
         const dictionary = new Dictionary();
-        dictionary.setWords( ['TEST', 'testen']);
+        dictionary.setWords(['TEST', 'testen']);
         expect(dictionary.getWords()).toEqual(['TEST', 'TESTEN']);
     });
 
@@ -23,7 +23,7 @@ describe('Dictionary', () => {
         expect(dictionary.getWords()).toEqual(['TEST']);
     });
 
-    it('should only includes words with letters A,B,C', () => {
+    it('should only includes words with letters A,B,C but remove "Blocked"', () => {
         const dictionary = new Dictionary();
         const words = ['Apfel', 'Bananen', 'Cranberry', 'Blocked'];
         const filtered = dictionary
@@ -32,5 +32,11 @@ describe('Dictionary', () => {
             .removeWords(['Blocked'])
             .getWords();
         expect(dictionary.getWords()).toEqual(['APFEL', 'BANANEN']);
+    });
+
+    it('should set words from file', () => {
+        const dictionary = new Dictionary();
+        dictionary.setWordsFromFile('src/words/words');
+        expect(dictionary.getWords().length).toBeGreaterThan(0);
     });
 });

@@ -32,4 +32,10 @@ export class Dictionary {
         });
         return this;
     }
+
+    setWordsFromFile(path: string): Dictionary {
+        const words = this.readFromFile(path);
+        this.setWords(words);
+        return this;
+    }
 }
