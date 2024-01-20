@@ -31,7 +31,7 @@ describe('Dictionary', () => {
             .filterLetters(['A', 'B'])
             .removeWords(['Blocked'])
             .getWords();
-        expect(dictionary.getWords()).toEqual(['APFEL', 'BANANEN']);
+        expect(filtered).toEqual(['APFEL', 'BANANEN']);
     });
 
     it('should set words from file', () => {
