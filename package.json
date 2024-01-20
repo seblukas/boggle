@@ -4,7 +4,7 @@
   "description": "A tool to play boogle",
   "main": "index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --coverage",
     "build": "tsc"
   },
   "author": "Sebastian Lukas",
