@@ -38,4 +38,8 @@ export class Dictionary {
         this.setWords(words);
         return this;
     }
+
+    containsWord(searchedWord: string): boolean {
+        return this.words.includes(searchedWord.toUpperCase());
+    }
 }
